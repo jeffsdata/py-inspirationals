@@ -26,6 +26,15 @@ class ImageAPI:
                 urllib.request.urlretrieve(img.get("urls").get("full"), f'data/raw/images/{img.get("id")}.{filetype}')
 
     def getImagesForTopic(self, topic, pages=30):
+        """ Retrieve a list of images for a particular topic from unsplash. 
+
+        Args:
+            topic (string): An id or slug for a topic.
+            pages (int, optional): The number of pages to return. 30 images per page. Defaults to 30.
+
+        Returns:
+            List: A list of images from unsplash
+        """
         logger = logging.getLogger(__name__)
         logger.info(f'Getting all images for topic {topic}...')
         allimages = []
@@ -38,6 +47,17 @@ class ImageAPI:
         return allimages
 
     def getRandomImagesForTopic(self, topic, count, wideOnly=True, saveFiles=True):
+        """ Get random images from the top 30 pages of a given topic (ie: from 900 images)
+
+        Args:
+            topic (string): An id or slug for a topic.
+            count (int): The number of images to return/save.
+            wideOnly (bool, optional): Whether you only want to return wide aspect images. Defaults to True.
+            saveFiles (bool, optional): Whether you want to save the files to /data/raw/images. Defaults to True.
+
+        Returns:
+            _type_: _description_
+        """
         logger = logging.getLogger(__name__)
         logger.info(f'Working on getting random {topic} images...')
         allimages = self.getImagesForTopic(topic, 30)

@@ -149,11 +149,19 @@ class InspirationalQuoteImage:
     def __makeDirectory(self, directory):
         Path(directory).mkdir(parents=True, exist_ok=True)
 
-    def makeInspirationalImages(self, saveImages=True):
+    def makeInspirationalImages(self, saveImages=True, showImages=False):
+        """Creates inspirational images based on the images and quotes provided.
+           Images: Should be in /data/raw/images
+           Quotes: Should be in /data/raw/quotes.csv (two columns: quote, attributed)
+
+        Args:
+            saveImages (bool, optional): Whether you want to save the images in /data/processed/images. Defaults to True.
+            showImages (bool, optional): Whether you want the images to pop up as it's running. Defaults to False.
+        """
         self.__makeDirectory("data/processed/images")
         PADDING=0.1
         BOX_COLOR=(0,0,0)
-        OPACITY=180
+        OPACITY=50
 
         # all files
         allimages = glob.glob("data/raw/images/*.jpg")
@@ -194,7 +202,8 @@ class InspirationalQuoteImage:
                                 font_size=140, color=(255,255,255), place='center')
                 img = Image.alpha_composite(img, byline)
 
-            #img.show()
+            if(showImages):
+                img.show()
 
             if(saveImages):
                 img = img.convert("RGB")
