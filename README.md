@@ -3,7 +3,7 @@
     - `pip install -r requirements.txt`
 1. Create a list of quotes - in /data/raw/quotes.csv (a demo file is provided)
     - Should have two columns: "quote" and "attributed".
-    <img src="./readme-images/quotes-data.png">
+    <img src="./readme-images/quotes-data.PNG">
 
 2. Create an account on Unsplash and get ClientID
     - Go to: [Unsplash Developers](https://unsplash.com/developers)
@@ -35,3 +35,7 @@
 <img src="./readme-images/0YG1nfI77T4.jpg">
 <img src="./readme-images/9Nn21mIKP1w.jpg">
 <img src="./readme-images/9Nn21mIKP1w.jpg">
+
+
+## Notes
+- The code doesn't currently consider the image size - the "normal" image size in Unsplash apparently isn't standardized. So, while text is adjusted for the length of a quote, it may appear smaller or larger depending on the resolution of the image. 
