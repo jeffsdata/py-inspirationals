@@ -46,12 +46,13 @@ class ImageAPI:
                 allimages.extend(r.json())
         return allimages
 
-    def getRandomImagesForTopic(self, topic, count, wideOnly=True, saveFiles=True):
+    def getRandomImagesForTopic(self, topic, count, pages, wideOnly=True, saveFiles=True):
         """ Get random images from the top 30 pages of a given topic (ie: from 900 images)
 
         Args:
             topic (string): An id or slug for a topic.
             count (int): The number of images to return/save.
+            pages (int): The number of pages to get from Unsplash. Be aware of your API limits.
             wideOnly (bool, optional): Whether you only want to return wide aspect images. Defaults to True.
             saveFiles (bool, optional): Whether you want to save the files to /data/raw/images. Defaults to True.
 
@@ -60,7 +61,7 @@ class ImageAPI:
         """
         logger = logging.getLogger(__name__)
         logger.info(f'Working on getting random {topic} images...')
-        allimages = self.getImagesForTopic(topic, 30)
+        allimages = self.getImagesForTopic(topic, pages)
         
         # Filter to wide images?
         if(wideOnly):
@@ -89,7 +90,7 @@ def main():
     logger = logging.getLogger(__name__)
     logger.info('Getting unsplash images.')
     us = ImageAPI()
-    us.getRandomImagesForTopic("nature", 150)
+    us.getRandomImagesForTopic("nature", 150, 30)
     logger.info("All done.")
 
 

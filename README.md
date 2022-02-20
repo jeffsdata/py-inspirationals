@@ -17,13 +17,16 @@
 
 3. Create nature images - to be the base of your inspirational messages.
     - Run /src/data/unsplash
-    - in the main() method, `us.getRandomImagesForTopic("nature", 150)`
+    - in the main() method, `us.getRandomImagesForTopic("nature", 150, 30)`
         - "nature" is the topic - you can pick a different topic if you'd like (explore unsplash.com)
-        - 150 is the number of images to save (save enough images for the number of quotes you have in quotes.csv). 
+        - count (int): The number of images to return/save. 150 in the example. 
+        - pages (int): The number of pages to get from Unsplash. Be aware of your API limits. 30 in the example for (900 total images), and it'll sample out 150 randomly.
         - wideOnly (bool, optional): Whether you only want to return wide aspect images. Defaults to True.
         - saveFiles (bool, optional): Whether you want to save the files to /data/raw/images. Defaults to True.
-    - in the getRandomImagesForTopic() method, `allimages = self.getImagesForTopic(topic, 30)`
-        - If you have more than 450 quotes, you'll want to adjust this. The "30" will get 30 pages of 30 images each - 900 images. If you want only horizontal images, then you may not have enoguh after it filters them. Adjust this to get more images to work with if you're not getting enough.
+    - in the getRandomImagesForTopic() method:
+        - `PADDING=0.1`: The amount of padding for the quote and author boxes (0.1 = 10% of the width and height of the image)
+        - `BOX_COLOR=(0,0,0)`: The color for the background box in RGB. 0,0,0 is black... 255,255,255 is white. 
+        - `OPACITY=50`: The opacity (aka: alpha) - from 0 to 255, 0 is transparent, 255 is solid. 
 
 4. Create the inspirational images
     - Run /src/data/imagemaker
