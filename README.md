@@ -3,8 +3,9 @@
     - `pip install -r requirements.txt`
 1. Create a list of quotes - in /data/raw/quotes.csv (a demo file is provided)
     - Should have two columns: "quote" and "attributed".
-    <img src="./readme-images/quotes-data.PNG">
-
+<br>
+<img src="./readme-images/quotes-data.PNG">
+<br>
 2. Create an account on Unsplash and get ClientID
     - Go to: [Unsplash Developers](https://unsplash.com/developers)
     - Sign up
@@ -14,7 +15,7 @@
     - Note: There are two levels of app:
         - Dev: Allows 50 calls per hour (plenty for this project - to get up to 1500 images from a topic to work with)
         - Prod: Allows 50,000 calls per hour... obviously, this is probably excessive.
-
+<br>
 3. Create nature images - to be the base of your inspirational messages.
     - Run /src/data/unsplash
     - in the main() method, `us.getRandomImagesForTopic("nature", 150)`
@@ -24,11 +25,15 @@
         - saveFiles (bool, optional): Whether you want to save the files to /data/raw/images. Defaults to True.
     - in the getRandomImagesForTopic() method, `allimages = self.getImagesForTopic(topic, 30)`
         - If you have more than 450 quotes, you'll want to adjust this. The "30" will get 30 pages of 30 images each - 900 images. If you want only horizontal images, then you may not have enoguh after it filters them. Adjust this to get more images to work with if you're not getting enough.
-
+<br>
 4. Create the inspirational images
     - Run /src/data/imagemaker
     - Will combine the quotes and images, making inspirational images, like below. 
-
+    - Saves files in /data/processed/images
+<br>
+5. Use them!
+    - I uploaded mine to a digital photo frame and they rotate throughout the day!
+<br>
 
 ## Examples:
 <img src="./readme-images/_7pntVTqEoo.jpg">
