@@ -1,11 +1,16 @@
+# Summary
+This project allows you to create inspirational quote/images from freely available stock image site "unsplash" or whatever images you want, really. I used this to fill an old digital photo frame with rotating quotes. See the [Examples](#examples) below.
+
 # Getting Started
-0. Install dependencies from requirements.txt
+1. Install dependencies from requirements.txt
     - `pip install -r requirements.txt`
-1. Create a list of quotes - in /data/raw/quotes.csv (a demo file is provided)
+
+2. Create a list of quotes - in /data/raw/quotes.csv (a demo file is provided)
     - Should have two columns: "quote" and "attributed".
     - <img src="./readme-images/quotes-data.PNG">
 
-2. Create an account on Unsplash and get ClientID
+3. Create an account on Unsplash and get ClientID
+    - If you already have images, you can skip this part - just load your images into /data/raw/images
     - Go to: [Unsplash Developers](https://unsplash.com/developers)
     - Sign up
     - Under "Your Apps", create an app and get ClientID (aka: "Access Key")
@@ -15,7 +20,7 @@
         - Dev: Allows 50 calls per hour (plenty for this project - to get up to 1500 images from a topic to work with)
         - Prod: Allows 50,000 calls per hour... obviously, this is probably excessive.
 
-3. Create nature images - to be the base of your inspirational messages.
+4. Create nature images - to be the base of your inspirational messages.
     - Run /src/data/unsplash
     - in the main() method, `us.getRandomImagesForTopic("nature", 150, 30)`
         - "nature" is the topic - you can pick a different topic if you'd like (explore unsplash.com)
@@ -28,12 +33,12 @@
         - `BOX_COLOR=(0,0,0)`: The color for the background box in RGB. 0,0,0 is black... 255,255,255 is white. 
         - `OPACITY=50`: The opacity (aka: alpha) - from 0 to 255, 0 is transparent, 255 is solid. 
 
-4. Create the inspirational images
+5. Create the inspirational images
     - Run /src/data/imagemaker
     - Will combine the quotes and images, making inspirational images, like below. 
     - Saves files in /data/processed/images
 
-5. Use them!
+6. Use them!
     - I uploaded mine to a digital photo frame and they rotate throughout the day!
 <br>
 
