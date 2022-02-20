@@ -46,7 +46,7 @@ This project allows you to create inspirational quote/images from freely availab
 <img src="./readme-images/_7pntVTqEoo.jpg">
 <img src="./readme-images/0YG1nfI77T4.jpg">
 <img src="./readme-images/9Nn21mIKP1w.jpg">
-<img src="./readme-images/9Nn21mIKP1w.jpg">
+<img src="./readme-images/eoLwBwP22VA.jpg">
 
 
 ## Notes
