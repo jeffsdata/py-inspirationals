@@ -32,6 +32,7 @@ This project allows you to create inspirational quote/images from freely availab
         - `PADDING=0.1`: The amount of padding for the quote and author boxes (0.1 = 10% of the width and height of the image)
         - `BOX_COLOR=(0,0,0)`: The color for the background box in RGB. 0,0,0 is black... 255,255,255 is white. 
         - `OPACITY=50`: The opacity (aka: alpha) - from 0 to 255, 0 is transparent, 255 is solid. 
+        - `CascadiaCode.ttf`: This is the font Cascadia Code - an open source, monospace, ligature-enabled type face (ligatures don't work in this application). If you want to change the typeface, replace that font file with another.
 
 5. Create the inspirational images
     - Run /src/data/imagemaker
